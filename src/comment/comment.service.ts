@@ -52,7 +52,7 @@ export class CommentService {
       },
     ]);
   }
-  async validateCommentUser(userId: mongoose.Schema.Types.ObjectId) {
+  private async validateCommentUser(userId: mongoose.Schema.Types.ObjectId) {
     const comment = await this.commentModel.findOne({ userId: userId });
     if (!comment) {
       throw new ForbiddenException(errorMessages.cannotUpdateComment);

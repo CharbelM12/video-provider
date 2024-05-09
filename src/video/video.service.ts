@@ -77,7 +77,7 @@ export class VideoService {
       },
     );
   }
-  getMinimumAge(ageRestriction: string) {
+  private getMinimumAge(ageRestriction: string) {
     switch (ageRestriction) {
       case AgeRestriction.G:
         return 0;
@@ -89,7 +89,7 @@ export class VideoService {
         return 18;
     }
   }
-  calculateAverageRating(
+  private calculateAverageRating(
     averageRating: number,
     ratingsCount: number,
     rating: number,
